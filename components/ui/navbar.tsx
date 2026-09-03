@@ -47,7 +47,9 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="#"
+            href="https://metasportscontrol.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 px-4 py-1.5 text-sm rounded-full font-medium border border-white/[0.12] text-[#9BA0A8] hover:text-white hover:border-[rgba(34,197,94,0.4)] transition-all duration-200"
           >
             Iniciar sesión
@@ -83,7 +85,9 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="#"
+              href="https://metasportscontrol.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
               className="block w-full px-4 py-2 text-sm font-medium text-center rounded-lg border border-white/[0.12] text-[#9BA0A8] hover:text-white transition-colors"
             >

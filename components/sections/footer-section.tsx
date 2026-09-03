@@ -8,8 +8,8 @@ const footerLinks = {
     { label: "FAQ", href: "#faq" },
   ],
   company: [
-    { label: "Contacto", href: "#cta-final" },
-    { label: "Iniciar sesión", href: "#" },
+    { label: "Contacto", href: "#cta-final", external: false },
+    { label: "Iniciar sesión", href: "https://metasportscontrol.vercel.app/", external: true },
   ],
   legal: [
     { label: "Términos", href: "#" },
@@ -55,7 +55,12 @@ export function FooterSection() {
             <ul className="space-y-2 sm:space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-xs sm:text-sm text-[#9BA0A8] hover:text-white transition-colors">
+                  <Link
+                    href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
+                    className="text-xs sm:text-sm text-[#9BA0A8] hover:text-white transition-colors"
+                  >
                     {link.label}
                   </Link>
                 </li>

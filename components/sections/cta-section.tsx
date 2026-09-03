@@ -47,7 +47,10 @@ export function CtaSection() {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
-        <p className="mt-8 sm:mt-10 text-xs sm:text-sm text-[#4a4d52] tracking-wide">
+        <p className="mt-6 text-xs sm:text-sm text-green-400 font-medium">
+          7 días de prueba gratis · Sin tarjeta de crédito
+        </p>
+        <p className="mt-3 text-xs sm:text-sm text-[#4a4d52] tracking-wide">
           Reservas · Cobros · Caja · Clientes · Torneos · Métricas
         </p>
       </motion.div>

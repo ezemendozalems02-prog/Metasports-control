@@ -117,6 +117,9 @@ export function PricingSection() {
           <p className="text-[#9BA0A8] max-w-xl mx-auto text-balance text-base sm:text-lg px-2">
             Empezá simple. Escalá cuando estés listo.
           </p>
+          <p className="mt-3 inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-green-400 bg-green-500/10 border border-green-500/25 rounded-full px-3.5 py-1.5">
+            🎁 7 días de prueba gratis en todos los planes · Sin tarjeta de crédito
+          </p>
         </motion.div>
 
         {/* Pricing Grid */}
@@ -169,30 +172,34 @@ export function PricingSection() {
           transition={{ duration: 0.6 }}
           className="mt-16 sm:mt-24"
         >
-          <h3 className="text-center font-display text-xl sm:text-2xl font-bold text-white mb-8 sm:mb-10">
+          <h3 className="text-center font-display text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-10">
             Comparativa completa
           </h3>
-          <div className="overflow-x-auto rounded-2xl border border-white/[0.08] glass-card">
-            <table className="w-full min-w-[520px] text-sm">
-              <thead>
-                <tr className="border-b border-white/[0.08]">
-                  <th className="text-left font-medium text-[#9BA0A8] px-4 sm:px-6 py-4 text-xs sm:text-sm">Funcionalidad</th>
-                  <th className="text-center font-semibold text-white px-3 py-4 text-xs sm:text-sm">Starter</th>
-                  <th className="text-center font-semibold text-green-400 px-3 py-4 text-xs sm:text-sm">Pro</th>
-                  <th className="text-center font-semibold text-white px-3 py-4 text-xs sm:text-sm">Business</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonRows.map((row, i) => (
-                  <tr key={row.label} className={i % 2 === 0 ? "bg-white/[0.015]" : ""}>
-                    <td className="px-4 sm:px-6 py-3 text-xs sm:text-sm text-[#9BA0A8]">{row.label}</td>
-                    <td className="px-3 py-3"><Cell ok={row.starter} /></td>
-                    <td className="px-3 py-3"><Cell ok={row.pro} /></td>
-                    <td className="px-3 py-3"><Cell ok={row.business} /></td>
+          <p className="sm:hidden text-center text-[11px] text-[#6b6f76] mb-4">← Deslizá para ver los 3 planes →</p>
+          <div className="relative">
+            <div className="overflow-x-auto rounded-2xl border border-white/[0.08] glass-card scrollbar-hidden">
+              <table className="w-full min-w-[460px] text-sm">
+                <thead>
+                  <tr className="border-b border-white/[0.08]">
+                    <th className="sticky left-0 bg-[#0D0D0D] text-left font-medium text-[#9BA0A8] px-3 sm:px-6 py-4 text-xs sm:text-sm">Funcionalidad</th>
+                    <th className="text-center font-semibold text-white px-2 sm:px-3 py-4 text-xs sm:text-sm">Starter</th>
+                    <th className="text-center font-semibold text-green-400 px-2 sm:px-3 py-4 text-xs sm:text-sm">Pro</th>
+                    <th className="text-center font-semibold text-white px-2 sm:px-3 py-4 text-xs sm:text-sm">Business</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row, i) => (
+                    <tr key={row.label} className={i % 2 === 0 ? "bg-white/[0.015]" : ""}>
+                      <td className="sticky left-0 bg-[#0a0a0a] px-3 sm:px-6 py-3 text-xs sm:text-sm text-[#9BA0A8] whitespace-nowrap">{row.label}</td>
+                      <td className="px-2 sm:px-3 py-3"><Cell ok={row.starter} /></td>
+                      <td className="px-2 sm:px-3 py-3"><Cell ok={row.pro} /></td>
+                      <td className="px-2 sm:px-3 py-3"><Cell ok={row.business} /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="sm:hidden absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-[#0a0a0a] to-transparent pointer-events-none rounded-r-2xl" />
           </div>
         </motion.div>
       </div>

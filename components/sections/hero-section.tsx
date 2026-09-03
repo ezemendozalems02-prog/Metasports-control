@@ -276,12 +276,25 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 items-center w-full">
         <div className="text-center lg:text-left">
+          {/* Free trial banner */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-green-500/15 border border-green-500/30 mb-4"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-live-pulse shrink-0" />
+            <span className="text-[11px] sm:text-xs font-semibold text-green-400">
+              7 días de prueba gratis · Sin tarjeta de crédito
+            </span>
+          </motion.div>
+
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full glass-card-green mb-6 sm:mb-8"
+            className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full glass-card-green mb-6 sm:mb-8 w-fit mx-auto lg:mx-0"
           >
             <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 shrink-0" />
             <span className="text-xs sm:text-sm text-[#9BA0A8]">Gestión inteligente para complejos deportivos</span>
@@ -349,9 +362,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="mt-6 sm:mt-8"
           >
-            <p className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm text-[#6b6f76]">
-              <CircleDot className="w-3.5 h-3.5 text-green-400" />
-              Sin instalaciones. Sin sistemas complicados. Todo desde la nube.
+            <p className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm text-[#6b6f76] text-balance">
+              <CircleDot className="w-3.5 h-3.5 text-green-400 shrink-0" />
+              7 días de prueba gratis, sin tarjeta. Sin instalaciones. Todo desde la nube.
             </p>
           </motion.div>
 
